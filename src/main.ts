@@ -1,4 +1,4 @@
-import { Component, Plugin } from "obsidian";
+import { Component, MarkdownRenderChild, Plugin } from "obsidian";
 import { DEFAULT_SETTINGS, DvViewsSettings, DvViewsSettingTab } from "./settings";
 
 interface DataviewApi {
@@ -32,9 +32,9 @@ export default class DvViewsPlugin extends Plugin {
 			}
 
 			const transformed = this.preprocessQuery(source);
-			const component = new Component();
-			ctx.addChild(component);
-			await api.execute(transformed, el, component, ctx.sourcePath);
+			const child = new MarkdownRenderChild(el);
+			ctx.addChild(child);
+			await api.execute(transformed, el, child, ctx.sourcePath);
 		});
 	}
 
