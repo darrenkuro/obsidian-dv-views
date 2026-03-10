@@ -1,0 +1,9 @@
+{
+	"id": "dv-views",
+	"name": "DV Views",
+	"version": "0.1.0",
+	"minAppVersion": "1.5.7",
+	"description": "Custom Dataview-powered codeblock preprocessor. Define aliases for filtered TASK queries.",
+	"author": "Darren Kuro",
+	"isDesktopOnly": false
+}
